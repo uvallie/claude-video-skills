@@ -1,0 +1,11 @@
+{
+  "name": "animation-engine",
+  "private": true,
+  "description": "Анімація кодом: frame(t) → SVG → resvg → ffmpeg. Без браузера.",
+  "scripts": {
+    "example": "node scenes/example.cjs --sheet --sound"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}

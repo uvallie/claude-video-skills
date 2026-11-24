@@ -1,0 +1,9 @@
+{
+  "name": "video-skills",
+  "version": "1.0.0",
+  "description": "Анімація кодом і монтаж відео з Claude: знайомство, встановлення інструментів, стиль, голос, рілзи й субтитри",
+  "author": { "name": "Alina Uvarova", "url": "https://alinauvarova.com" },
+  "homepage": "https://github.com/uvallie/claude-video-skills",
+  "license": "MIT",
+  "keywords": ["video", "animation", "editing", "reels", "subtitles", "ffmpeg", "whisper"]
+}

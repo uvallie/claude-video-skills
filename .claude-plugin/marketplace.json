@@ -1,0 +1,12 @@
+{
+  "name": "uvallie-video-skills",
+  "owner": { "name": "Alina Uvarova", "url": "https://alinauvarova.com" },
+  "metadata": { "description": "Скіли Claude для анімації й монтажу відео" },
+  "plugins": [
+    {
+      "name": "video-skills",
+      "source": "./plugins/video-skills",
+      "description": "Анімація кодом і монтаж відео з Claude: знайомство, встановлення інструментів, стиль, голос, рілзи й субтитри"
+    }
+  ]
+}
