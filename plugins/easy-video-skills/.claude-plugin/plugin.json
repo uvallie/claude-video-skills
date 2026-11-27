@@ -1,0 +1,10 @@
+{
+  "name": "easy-video-skills",
+  "version": "1.1.0",
+  "description": "Animation in code and video editing with Claude: onboarding, tool setup, style, voice, reels and captions. By Alina Runs Agents.",
+  "author": { "name": "Alina Uvarova · Alina Runs Agents", "url": "https://alinauvarova.com" },
+  "homepage": "https://github.com/uvallie/claude-easy-video-skills",
+  "repository": "https://github.com/uvallie/claude-easy-video-skills",
+  "license": "MIT",
+  "keywords": ["video", "animation", "editing", "reels", "subtitles", "captions", "explainer", "ffmpeg", "whisper", "alina-runs-agents"]
+}

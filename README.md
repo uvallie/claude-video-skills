@@ -1,74 +1,117 @@
-# Відео з Claude: анімація і монтаж
+<p align="center">
+  <img src="assets/banner.gif" alt="Claude Easy Video Skills by Alina Runs Agents: ШІшка the mascot waves next to a film strip" width="100%">
+</p>
 
-Два безкоштовні скіли для Claude Code. Ставиш один раз, і далі Claude сам знає, як робити анімацію і як монтувати відео.
+<p align="center">
+  <b>English</b> · <a href="README.uk.md">Українською</a>
+</p>
 
-- **animation**: анімовані відео кодом. Explainer-ролики, покрокові інструкції, анімовані обкладинки, міні-мультики. Кожен кадр малює код, FFmpeg склеює кадри у відео. After Effects і ШІ-генерація відео не потрібні.
-- **video-editing**: монтаж. Вирізає паузи, нарізає довгі ефіри на рілзи, перекадровує під 9:16 / 4:5 / 1:1 / 16:9, додає субтитри з підсвіткою слів, музику й рівну гучність. Працює на твоєму комп'ютері (FFmpeg + Whisper), без платних сервісів.
+<p align="center">
+  <a href="https://t.me/alinarunsagents">Telegram</a> ·
+  <a href="https://www.instagram.com/alinarunsagents">Instagram</a> ·
+  <a href="https://www.threads.net/@alina.runs.agents">Threads</a> ·
+  <a href="https://alinauvarova.com">alinauvarova.com</a>
+</p>
 
-Перший запуск кожного скіла — знайомство. Claude:
+# Claude Easy Video Skills
 
-1. перевіряє, що вже встановлено, і пропонує поставити відсутнє (питає перед кожним кроком);
-2. допомагає знайти твій стиль за референсами: «надихайся, але не копіюй»;
-3. за бажанням підключає ключ для голосу (Gemini — безкоштовний і перевірений; ElevenLabs і OpenAI підтримуються, але ще не перевірені) або моделі для картинок. Ключ лежить у файлі `.env` на твоєму комп'ютері, у чат його вставляти не треба;
-4. записує все в налаштування проєкту, тож наступного разу питати не буде.
+Two free skills for Claude Code from **[Alina Runs Agents](https://alinauvarova.com)**. Install them once, and Claude knows how to animate and how to edit video. You just ask in plain words.
 
-Далі достатньо написати звичайними словами: «зроби анімацію за цим сценарієм», «наріж із цього ефіру три рілзи з субтитрами», «зроби хук більшим».
+- **animation**: animated videos made in code. Explainers, step-by-step how-tos, motion covers, small cartoons. Code draws every frame, FFmpeg joins the frames into a video. No After Effects, no AI video generation.
+- **video-editing**: editing your footage. Cuts pauses and filler words, slices a long stream into reels, reframes to 9:16 / 4:5 / 1:1 / 16:9, adds captions with word highlighting, music and even loudness. Runs on your computer (FFmpeg + Whisper), no paid services.
 
-## Що потрібно
+## What you get
 
-- Застосунок Claude на комп'ютері (claude.ai/download), вкладка **Code**, або Claude Code у терміналі. Потрібна платна підписка Claude.
-- Mac (перевірено). Linux і Windows через WSL мають працювати, але ще не перевірені: скрипти написані для bash. Node.js, FFmpeg і Python Claude поставить сам, коли ти погодишся.
+Made with these skills: an explainer, a how-to «Instruction» reel, and a talking-head reel edited with highlighted captions.
 
-## Як встановити
+<table>
+<tr>
+<td align="center" width="33%"><img src="assets/example-explainer.gif" width="240" alt="Explainer reel: a diagram of how RAG works builds step by step while ШІшка points at it"><br><sub><b>Explainer</b><br>diagram builds step by step</sub></td>
+<td align="center" width="33%"><img src="assets/example-howto.gif" width="240" alt="How-to reel: frames drawn by code join into a film strip"><br><sub><b>How-to reel</b><br>numbered steps, mascot, UI mockups</sub></td>
+<td align="center" width="33%"><img src="assets/example-editing.gif" width="240" alt="Talking-head reel with captions, the spoken word highlighted in lime"><br><sub><b>Edited reel</b><br>pauses cut, captions with word highlight</sub></td>
+</tr>
+</table>
 
-### Варіант 1. Через плагін (рекомендовано)
+Typical result: a 30–60 second 9:16 reel with captions and voice, from a script you write in plain words. Ask for 4:5 or 16:9 and you get the same video in those formats.
 
-У полі повідомлення Claude Code напиши по черзі:
+## Quick start
 
-```
-/plugin marketplace add uvallie/claude-video-skills
-```
-
-```
-/plugin install video-skills@uvallie-video-skills
-```
-
-Перезапусти сесію. Скіли спрацьовують самі, коли просиш про анімацію чи монтаж. Можна викликати й напряму: `/video-skills:animation`, `/video-skills:video-editing`.
-
-У застосунку Claude плагіни також можна додати через **+** біля поля повідомлення → **Add plugins**. Якщо маркетплейсу немає в списку, один раз виконай першу команду вище.
-
-### Варіант 2. Скопіювати вручну
-
-Завантаж репозиторій (Code → Download ZIP) і скопіюй папки `plugins/video-skills/skills/animation` та `plugins/video-skills/skills/video-editing` у `~/.claude/skills/`. На Windows це `C:\Users\<ім'я>\.claude\skills\`. Почни нову сесію.
-
-## З чого почати
-
-1. Створи порожню папку, наприклад «Анімація» або «Відеомонтаж».
-2. У Claude Code відкрий цю папку: кнопка з ноутбуком під полем повідомлення → **New environment** → **Folders: Add**.
-3. Напиши: «Давай зробимо анімацію» або «Допоможи змонтувати відео». Claude почне знайомство.
-
-## Що всередині
+In the Claude Code message box, run:
 
 ```
-plugins/video-skills/skills/
+/plugin marketplace add uvallie/claude-easy-video-skills
+```
+
+```
+/plugin install easy-video-skills@alina-runs-agents
+```
+
+Restart the session, open an empty folder and write: «Let's make an animation» or «Help me edit a video». Claude starts the onboarding.
+
+## First run: onboarding
+
+The first time each skill runs, Claude:
+
+1. checks what is already installed and offers to install what is missing (it asks before every step);
+2. helps you find your style from references: get inspired, don't copy;
+3. if you want, connects a key for voice (Gemini is free and tested; ElevenLabs and OpenAI are supported but not tested yet) or for image models. The key stays in a `.env` file on your computer, you never paste it into the chat;
+4. saves everything in the project settings, so next time it doesn't ask again.
+
+Then just ask: «make an animation from this script», «cut three reels with captions from this stream», «make the hook bigger».
+
+## What you need
+
+- The Claude desktop app (claude.ai/download), **Code** tab, or Claude Code in a terminal. A paid Claude plan.
+- Mac (tested). Linux and Windows via WSL should work but are not tested yet: the scripts are bash. Claude installs Node.js, FFmpeg and Python itself once you agree.
+
+## Install
+
+### Option 1. As a plugin (recommended)
+
+Run the two commands from [Quick start](#quick-start). The skills trigger on their own when you ask for animation or editing. You can also call them directly: `/easy-video-skills:animation`, `/easy-video-skills:video-editing`.
+
+In the Claude app you can also add plugins with **+** next to the message box → **Add plugins**. If the marketplace isn't listed, run the first command above once.
+
+### Option 2. Copy by hand
+
+Download the repo (Code → Download ZIP) and copy `plugins/easy-video-skills/skills/animation` and `plugins/easy-video-skills/skills/video-editing` into `~/.claude/skills/`. On Windows that's `C:\Users\<name>\.claude\skills\`. Start a new session.
+
+## Where to start
+
+1. Create an empty folder, for example «Animation» or «Video editing».
+2. In Claude Code, open that folder: the laptop button under the message box → **New environment** → **Folders: Add**.
+3. Write: «Let's make an animation» or «Help me edit a video». Claude starts the onboarding.
+
+## What's inside
+
+```
+plugins/easy-video-skills/skills/
 ├── animation/
-│   ├── SKILL.md            порядок роботи: знайомство → сценарій → стиль → розкадровка → відео → голос → правки
-│   ├── engine/             рушій: frame(t) → SVG → resvg → FFmpeg; рух, текст, голос, синтезована музика
-│   ├── references/         правила анімації, вибір голосу, моделі для картинок
-│   └── scripts/check.sh    перевірка, чого бракує
+│   ├── SKILL.md            workflow: onboarding → script → style → storyboard → video → voice → edits
+│   ├── engine/             engine: frame(t) → SVG → resvg → FFmpeg; motion, text, voice, synthesized music
+│   ├── references/         animation rules, choosing a voice, image models
+│   └── scripts/check.sh    checks what is missing
 └── video-editing/
-    ├── SKILL.md            порядок роботи: знайомство → транскрипція → монтаж → кадрування → субтитри → гучність
-    ├── scripts/            transcribe, keeps (вирізати паузи), cut_edl, reframe, burn_captions, loudnorm, synth_bed…
-    ├── config/             формати й стиль субтитрів
-    └── references/         формати, безпечні зони, налаштування субтитрів
+    ├── SKILL.md            workflow: onboarding → transcription → cut → reframe → captions → loudness
+    ├── scripts/            transcribe, keeps (cut pauses), cut_edl, reframe, burn_captions, loudnorm, synth_bed…
+    ├── config/             formats and caption style
+    └── references/         formats, safe zones, caption settings
 ```
 
-## Безпека
+The skills talk to you in your language. The instructions inside them are in Ukrainian.
 
-- Ключі зберігаються лише у файлі `.env` у твоїй папці. Скіли не просять вставляти ключ у чат і не показують його.
-- Claude нічого не встановлює й не публікує без твого «так».
-- Референси потрібні для натхнення. Чужих персонажів, логотипи й контент не копіюємо.
+## Safety
 
-## Автор
+- Keys live only in the `.env` file in your folder. The skills never ask you to paste a key into the chat and never show it.
+- Claude installs or publishes nothing without your «yes».
+- References are for inspiration. We don't copy other people's characters, logos or content.
 
-Аліна Уварова, [alinauvarova.com](https://alinauvarova.com). Ліцензія MIT: можна використовувати, змінювати й поширювати.
+## Made by
+
+**Alina Uvarova** · [Alina Runs Agents](https://alinauvarova.com). I show how to hand real work to AI agents: video, content, marketing. The mascot on the banner is ШІшка.
+
+Follow along: [Telegram](https://t.me/alinarunsagents) · [Instagram](https://www.instagram.com/alinarunsagents) · [Threads](https://www.threads.net/@alina.runs.agents)
+
+If the skills helped you, put a ⭐ on the repo, it helps other people find them.
+
+MIT license: use, change and share freely.
