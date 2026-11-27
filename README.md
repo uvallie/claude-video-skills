@@ -22,7 +22,7 @@ Two free skills for Claude Code from **[Alina Runs Agents](https://alinauvarova.
 
 ## What you get
 
-Made with these skills: an explainer, a how-to «Instruction» reel, and a talking-head reel edited with highlighted captions.
+Real videos from my channel: an explainer and a how-to reel made with the same frame-by-frame engine the animation skill ships (the mascot and its diagram library are mine and not included), and a talking-head reel cut and captioned with the video-editing scripts.
 
 <table>
 <tr>
